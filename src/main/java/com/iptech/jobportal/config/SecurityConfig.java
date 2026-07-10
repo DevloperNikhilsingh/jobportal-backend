@@ -51,7 +51,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // TODO: apne frontend ka exact origin daalo (e.g. http://localhost:5173 ya jo bhi port ho)
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+       configuration.setAllowedOrigins(List.of(
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://jobportal-frontend-inky.vercel.app"
+));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
