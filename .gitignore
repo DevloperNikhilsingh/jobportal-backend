@@ -1,0 +1,19 @@
+﻿target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Uploaded files (resumes/images) - itna bada folder push nahi karna
+uploads/
+
+# Sensitive config - isme passwords hain
+src/main/resources/application.properties
