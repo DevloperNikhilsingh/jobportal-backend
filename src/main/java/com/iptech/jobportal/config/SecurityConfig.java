@@ -54,7 +54,9 @@ public class SecurityConfig {
        configuration.setAllowedOrigins(List.of(
     "http://localhost:5173",
     "http://localhost:3000",
-    "https://jobportal-frontend-inky.vercel.app"
+    "http://localhost:5174",
+    "https://jobportal-frontend-inky.vercel.app",
+     "https://beamish-biscotti-ccf0e4.netlify.app"
 ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));

@@ -1,5 +1,6 @@
 package com.iptech.jobportal.service;
 
+import org.springframework.transaction.annotation.Transactional;
 import com.iptech.jobportal.dto.DashboardStatsResponse;
 import com.iptech.jobportal.model.Job;
 import com.iptech.jobportal.model.JobRequest;
@@ -172,9 +173,11 @@ public class JobService {
         return jobRepository.findAllByOrderByApprovedAtDesc();
     }
 
+    @Transactional
     public void deleteJob(Long id) {
-        jobRepository.deleteById(id);
-    }
+    applicationRepository.deleteByJobId(id);
+    jobRepository.deleteById(id);
+}
 
     public Job updateJob(Long id, Job jobDetails) {
         Job job = jobRepository.findById(id)
