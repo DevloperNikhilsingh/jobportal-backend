@@ -56,7 +56,8 @@ public class SecurityConfig {
     "http://localhost:3000",
     "http://localhost:5174",
     "https://jobportal-frontend-inky.vercel.app",
-     "https://beamish-biscotti-ccf0e4.netlify.app"
+     "https://beamish-biscotti-ccf0e4.netlify.app",
+     "https://iptech.netlify.app"
 ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
