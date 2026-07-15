@@ -41,4 +41,26 @@ public class JobController {
     public ResponseEntity<List<Job>> getAllJobs() {
         return ResponseEntity.ok(jobService.getAllJobs());
     }
+
+    @PostMapping("/admin/jobs")
+    public ResponseEntity<Job> createJobDirectly(
+            @RequestParam("companyName") String companyName,
+            @RequestParam("jobTitle") String jobTitle,
+            @RequestParam("jobDescription") String jobDescription,
+            @RequestParam("location") String location,
+            @RequestParam("salary") String salary,
+            @RequestParam(value = "experience", required = false) String experience,
+            @RequestParam(value = "workHour", required = false) String workHour,
+            @RequestParam(value = "jobType", required = false) String jobType,
+            @RequestParam(value = "skills", required = false) String skills,
+            @RequestParam(value = "image", required = false) MultipartFile image) {
+        try {
+            Job newJob = jobService.createJobDirectly(companyName, jobTitle, jobDescription, location,
+                    salary, experience, workHour, jobType, skills, image);
+            return ResponseEntity.ok(newJob);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
 }

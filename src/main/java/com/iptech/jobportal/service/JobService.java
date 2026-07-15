@@ -197,4 +197,33 @@ public class JobService {
                 jobRequestRepository.count(),
                 newsletterSubscriberRepository.count());
     }
+
+    public Job createJobDirectly(String companyName, String jobTitle, String jobDescription, String location,
+            String salary, String experience, String workHour, String jobType, String skills,
+            MultipartFile image) throws IOException {
+        String imageUrl = null;
+        if (image != null && !image.isEmpty()) {
+            imageUrl = fileStorageService.storeFile(image, "uploads");
+        }
+
+        Job job = new Job();
+        job.setCompanyName(companyName);
+        job.setJobTitle(jobTitle);
+        job.setJobDescription(jobDescription);
+        job.setLocation(location);
+        job.setSalary(salary);
+        job.setImageUrl(imageUrl);
+        job.setExperience(experience);
+        job.setWorkHour(workHour);
+        job.setJobType(jobType);
+        job.setSkills(skills);
+        job.setApprovedAt(LocalDateTime.now());
+
+        Job savedJob = jobRepository.save(job);
+
+        notifyUsersAboutNewJob(savedJob);
+        notifySubscribersAboutNewJob(savedJob);
+
+        return savedJob;
+    }
 }
