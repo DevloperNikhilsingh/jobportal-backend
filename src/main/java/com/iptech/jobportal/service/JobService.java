@@ -52,7 +52,7 @@ public class JobService {
             String jobType, String skills, MultipartFile image) throws IOException {
         String imageUrl = null;
         if (image != null && !image.isEmpty()) {
-            imageUrl = fileStorageService.storeFile(image, "images");
+            imageUrl = fileStorageService.storeFile(image, "uploads");
         }
 
         JobRequest jobRequest = new JobRequest();
