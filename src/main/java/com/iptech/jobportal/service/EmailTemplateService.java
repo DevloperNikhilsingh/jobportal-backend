@@ -99,7 +99,7 @@ public class EmailTemplateService {
                                         <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
                                             <tr>
                                                 <td align="center" style="border-radius:8px; background: linear-gradient(90deg,#4338CA,#9333EA);">
-                                                    <a href="http://localhost:5173" style="display:inline-block; padding:12px 28px; font-size:14px; font-weight:600; color:#ffffff; text-decoration:none;">
+                                                    <a href="https://iptech.netlify.app" style="display:inline-block; padding:12px 28px; font-size:14px; font-weight:600; color:#ffffff; text-decoration:none;">
                                                         Explore Jobs
                                                     </a>
                                                 </td>

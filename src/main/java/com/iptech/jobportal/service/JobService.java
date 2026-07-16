@@ -45,7 +45,7 @@ public class JobService {
     @Autowired
     private EmailTemplateService emailTemplateService;
 
-    private static final String FRONTEND_URL = "http://localhost:5173"; // production mein badalna hoga
+    private static final String FRONTEND_URL = "https://iptech.netlify.app"; // production mein badalna hoga
 
     public void submitJobRequest(String companyName, String jobTitle, String jobDescription, String location,
             String salary, String employerEmail, String experience, String workHour,
